@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="/javaScript/addResponse.js?v2"></script>
+</head>
+<body>
+
+<div class = "container-fluid  ">
+    <div class = "row justify-content-center" >
+        <div class = "col-sm-8">
+            <h1  class ="alert alert-secondary" >Welcome to the best StackOverSlow website</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center" >
+        <div class="col-sm-8  ; alert alert-secondary" style="text-align:center">
+            <h2>Answer this Question</h2>
+            <p class="alert alert-info" id="showQuestion"> </p>
+
+            <form onsubmit = "return validatorForm ()" name="myform" action="/AddResponse" method="post">
+                <div class="form-group">
+                    <label for="myName">Your name </label>
+                    <input type="text" class="form-control" id="myName" name="myName"  placeholder="Enter Name" required>
+                </div>
+                <p class = "alert alert-danger" id = "errorMessage1" style="display:none" > </p>
+                <div class="form-group" >
+                    <label for="myAnswer"> Response Area</label>
+                    <textarea class="form-control" id="myAnswer" rows="5"  name="text" required></textarea>
+                    <p class = "alert alert-danger" id ="errorMessage2" style="display:none" > </p>
+                    <div id="button1"></div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function validatorForm(){
+        let error = true;
+        let name = document.myform.myName.value.trim();
+        let text = document.myform.text.value.trim();
+        document.getElementById("errorMessage1").style.display="none" ;
+        document.getElementById("errorMessage2").style.display="none" ;
+        if (name == null || name === ""){
+            document.getElementById("errorMessage1").style.display="block" ;
+            document.getElementById("errorMessage1").innerHTML = "you need to enter your name please";
+            error = false;
+        }
+        if(text == null || text === ""){
+            document.getElementById("errorMessage2").style.display="block" ;
+            document.getElementById("errorMessage2").innerHTML = "you need to enter your response please";
+            error = false;
+        }
+        return error;
+    }
+</script>
+
+</body>
+</html>

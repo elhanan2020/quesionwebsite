@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.ex2_ElhananBuff.javaPackage"},{"l":"com.example.ex2_ElhananBuff.servletPackage"}];updateSearchResults();
